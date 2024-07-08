@@ -1,8 +1,15 @@
-ssh NicholasThompson@PracticePi.local - opens the ssh terminal\
-ls : looks at the directory files\
-cd : enters the directory\
-cd .. : exits the directory\ 
-rm : removes memory (-r) if a directory\
-echo -content- > -file- : creates/modifies the file\
-git clone -https of git- : clones the git repo locally\
+ssh NicholasThompson@PracticePi.local : opens the ssh terminal
+ls : looks at the directory files
+cd : enters the directory
+cd .. : exits the directory
+mkdir -directory- : creates a new directory
+mv -source- -destination- : moves or renames files or directories
+rm : removes memory (-r) if a directory
+echo -content- > -file- : creates/modifies the file
+git clone -https of git- : clones the git repo locally
 git pull origin main : updates the local git clone
+sudo apt install -package- : installs a new package
+sudo apt remove -package- : installs a new package
+sudo raspi-config : opens the Raspberry Pi configuration tool
+sudo reboot : reboots the Raspberry Pi
+sudo shutdown -h now : shuts down the Raspberry Pi immediately
