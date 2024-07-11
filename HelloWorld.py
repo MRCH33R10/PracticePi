@@ -1,4 +1,3 @@
-from gpiozero import LED
 from gpiozero import Motor
 import time
 
@@ -9,11 +8,11 @@ print("editted from ipad")
 motor1 = Motor(22, 23)
 motor1.forward()
 time.sleep(1)
-motor1.backward()
-time.sleep(1)
 motor1.forward(0.5)
 time.sleep(1)
-motor1.backward(0.5)
+motor1.forward(0.1)
+time.sleep(1)
+motor1.backward()
 time.sleep(1)
 #GPIO22 Right:Forward
 #GPIO23 Right:Backward
