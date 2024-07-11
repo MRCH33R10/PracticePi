@@ -10,6 +10,7 @@ print("editted from ipad")
 #GPIO23 Right:Backward
 motor1 = Motor(22, 23)
 led = LED(27)
+led2 = LED(24)
 
 motor1.forward()
 time.sleep(1)
@@ -24,6 +25,12 @@ led.on()
 time.sleep(1)
 led.off()
 time.sleep(1)
+
+led2.on()
+time.sleep(1)
+led2.off()
+time.sleep(1)
+
 #GPIO22 Right:Forward
 #GPIO23 Right:Backward
 #GPIO24 Right:Forward
