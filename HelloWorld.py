@@ -13,7 +13,7 @@ motor1 = Motor(22, 23)
 led = LED(27)
 led2 = LED(24)
 button = Button(25)
-while not button.is_pressed
+while not button.is_pressed:
   motor1.forward()
   time.sleep(1)
   motor1.forward(0.5)
