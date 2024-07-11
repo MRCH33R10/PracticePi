@@ -8,7 +8,7 @@ print("editted from ipad")
 #GPIO22 Right:Forward
 #GPIO23 Right:Backward
 motor1 = Motor(22, 23)
-motor2 = Motor(27, 24)
+motor2 = Motor(27, 27)
 motor1.forward()
 time.sleep(1)
 motor1.forward(0.5)
