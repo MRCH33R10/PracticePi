@@ -1,6 +1,5 @@
 from gpiozero import Motor
-from gpiozero import LED
-from gpiozero import Button
+import RPi.GPIO as GPIO
 import time
 
 
@@ -9,33 +8,36 @@ print("editted from ipad")
 
 #GPIO22 Right:Forward
 #GPIO23 Right:Backward
-motor1 = Motor(22, 23)
-led = LED(27)
-led2 = LED(24)
-button = Button(25)
+motorR = Motor(22, 23)
+#GPIO27 Left:Forward
+#GPIO24 Left:Backward
+motorL = Motor(27, 24)
 
-try:
-  while True:
-    motor1.forward()
-    time.sleep(1)
-    motor1.forward(0.5)
-    time.sleep(1)
-    motor1.forward(0.1)
-    time.sleep(1)
-    motor1.backward()
-    time.sleep(1)
-    
-    led.on()
-    time.sleep(1)
-    led.off()
-    time.sleep(1)
-    
-    led2.on()
-    time.sleep(1)
-    led2.off()
-    time.sleep(1)
-except KeyboardInterrupt:
-    exit()
+
+
+button = Button(25)
+GPIO.setmode(GPIO.BCM)
+
+while True:
+  motorR.forward()
+  time.sleep(1)
+  motorR.forward(0.5)
+  time.sleep(1)
+  motorR.forward(0.1)
+  time.sleep(1)
+  motorR.backward()
+  time.sleep(1)
+  
+  motorL.forward()
+  time.sleep(1)
+  motorL.forward(0.5)
+  time.sleep(1)
+  motorL.forward(0.1)
+  time.sleep(1)
+  motorL.backward()
+  time.sleep(1)
+
+
 
 #GPIO22 Right:Forward
 #GPIO23 Right:Backward
