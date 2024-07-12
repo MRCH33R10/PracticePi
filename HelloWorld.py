@@ -13,25 +13,29 @@ motor1 = Motor(22, 23)
 led = LED(27)
 led2 = LED(24)
 button = Button(25)
-while not button.is_pressed:
-  motor1.forward()
-  time.sleep(1)
-  motor1.forward(0.5)
-  time.sleep(1)
-  motor1.forward(0.1)
-  time.sleep(1)
-  motor1.backward()
-  time.sleep(1)
-  
-  led.on()
-  time.sleep(1)
-  led.off()
-  time.sleep(1)
-  
-  led2.on()
-  time.sleep(1)
-  led2.off()
-  time.sleep(1)
+
+try:
+  while true:
+    motor1.forward()
+    time.sleep(1)
+    motor1.forward(0.5)
+    time.sleep(1)
+    motor1.forward(0.1)
+    time.sleep(1)
+    motor1.backward()
+    time.sleep(1)
+    
+    led.on()
+    time.sleep(1)
+    led.off()
+    time.sleep(1)
+    
+    led2.on()
+    time.sleep(1)
+    led2.off()
+    time.sleep(1)
+Except KeyboardInterrupt:
+    exit()
 
 #GPIO22 Right:Forward
 #GPIO23 Right:Backward
