@@ -1,5 +1,5 @@
 from gpiozero import Motor
-import RPi.GPIO as GPIO
+from gpiozero import Button
 import time
 
 
@@ -13,22 +13,10 @@ motorR = Motor(22, 23)
 #GPIO24 Left:Backward
 motorL = Motor(27, 24)
 
-ext = True
-ButtonPin = 25
-GPIO.setmode(GPIO.BCM)
-
-def ButtonPin_callback(channel):
-    global ext
-    ext = False
-  
-GPIO.setup(ButtonPin, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-GPIO.add_event_detect(ButtonPin,
-                      GPIO.BOTH,
-                      callback = ButtonPin_callback,
-                      bouncetime = 50)
+btn = Button(25)
 
 try:
-    while ext:
+    while btn.when_released:
         motorR.forward()
         time.sleep(1)
         motorR.forward(0.5)
