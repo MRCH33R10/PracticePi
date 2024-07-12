@@ -48,7 +48,7 @@ btn = Button(25)
 stop_threads = False
 btn.when_pressed = pressed
 
-blink_thread = Thread(target=blink_ledargs =(lambda : stop_threads, ))
+blink_thread = Thread(target=blink_led, args =(lambda : stop_threads, ))
 blink_thread.start()
 
 
