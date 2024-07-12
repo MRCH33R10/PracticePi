@@ -5,7 +5,7 @@ import time
 
 print("Hello to this great and prosperous world and to all who inhabit it, ps this is editted")
 print("editted from ipad")
-
+ext = True
 #GPIO22 Right:Forward
 #GPIO23 Right:Backward
 motorR = Motor(22, 23)
@@ -13,12 +13,15 @@ motorR = Motor(22, 23)
 #GPIO24 Left:Backward
 motorL = Motor(27, 24)
 
-
-
-button = Button(25)
+def ButtonPin_Callback(channel)
+  ext = False
+  
+ButtonPin = 25
 GPIO.setmode(GPIO.BCM)
+GPIO.setup(ButtonPin, GPIO.IN, pull_up_down = GPIO.PUD_UP)
+GPIO.add_event_detect(ButtonPin, GPIO.BOTH, callback = ButtonPin_Callback, bouncetime = 50)
 
-while True:
+while ext == True:
   motorR.forward()
   time.sleep(1)
   motorR.forward(0.5)
