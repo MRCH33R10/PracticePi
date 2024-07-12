@@ -1,5 +1,6 @@
 from gpiozero import Motor
 from gpiozero import Button
+import sys
 import time
 
 
@@ -13,10 +14,13 @@ motorR = Motor(22, 23)
 #GPIO24 Left:Backward
 motorL = Motor(27, 24)
 
+def pressed:
+    sys.exit()
+
 btn = Button(25)
+btn.when_pressed = pressed
 
-
-while not btn.is_pressed:
+while True:
     motorR.forward()
     time.sleep(1)
     motorR.forward(0.5)
