@@ -47,26 +47,29 @@
 #         motorL.stop()
 # finally:
 #     GPIO.cleanup()
-
-
+         
+import signal                   
+import sys
 import RPi.GPIO as GPIO
-import time
 
-ButtonPin = 25
+BUTTON_GPIO = 16
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(ButtonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
-def ButtonPin_callback(channel):
-    print("Button pressed!")
-
-try:
-    GPIO.add_event_detect(ButtonPin, GPIO.BOTH, callback=ButtonPin_callback, bouncetime=50)
-    print("Waiting for button press...")
-    while True:
-        time.sleep(1)
-except KeyboardInterrupt:
-    print("Exiting...")
-finally:
+def signal_handler(sig, frame):
     GPIO.cleanup()
+    sys.exit(0)
 
+def button_callback(channel):
+    if not GPIO.input(BUTTON_GPIO):
+        print("Button pressed!")
+    else:
+        print("Button released!")
+
+if __name__ == '__main__':
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(BUTTON_GPIO, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    
+    GPIO.add_event_detect(BUTTON_GPIO, GPIO.BOTH, 
+            callback=button_callback, bouncetime=50)
+    
+    signal.signal(signal.SIGINT, signal_handler)
+    signal.pause()
