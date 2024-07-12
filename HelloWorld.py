@@ -1,5 +1,6 @@
 from gpiozero import Motor
 from gpiozero import Button
+from threading import Thread
 import sys
 import time
 
@@ -17,7 +18,7 @@ motorL = Motor(27, 24)
 def pressed():
     print("button was pressed")
     sys.exit()
-def released():
+def blink_led():
     btn.when_pressed = pressed
     motorR.forward()
     time.sleep(1)
@@ -40,8 +41,13 @@ def released():
     motorL.stop()   
     
 btn = Button(25)
+
 btn.when_pressed = pressed
-btn.when_released = released
+
+blink_thread = Thread(target=blink_led)
+blink_thread.start()
+
+pause()
 
 
          
