@@ -34,7 +34,7 @@ try:
     time.sleep(1)
     led2.off()
     time.sleep(1)
-Except KeyboardInterrupt:
+except KeyboardInterrupt:
     exit()
 
 #GPIO22 Right:Forward
