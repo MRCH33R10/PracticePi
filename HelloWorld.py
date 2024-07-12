@@ -14,31 +14,34 @@ motorR = Motor(22, 23)
 #GPIO27 Left:Forward
 #GPIO24 Left:Backward
 motorL = Motor(27, 24)
-
+blink = True
 def pressed():
+    global blink
+    blink = False
     print("button was pressed")
     sys.exit()
 def blink_led():
-    btn.when_pressed = pressed
-    motorR.forward()
-    time.sleep(1)
-    motorR.forward(0.5)
-    time.sleep(1)
-    motorR.forward(0.1)
-    time.sleep(1)
-    motorR.backward()
-    time.sleep(1)
-    motorR.stop()
-    
-    motorL.forward()
-    time.sleep(1)
-    motorL.forward(0.5)
-    time.sleep(1)
-    motorL.forward(0.1)
-    time.sleep(1)
-    motorL.backward()
-    time.sleep(1)
-    motorL.stop()   
+    while blink:
+        btn.when_pressed = pressed
+        motorR.forward()
+        time.sleep(1)
+        motorR.forward(0.5)
+        time.sleep(1)
+        motorR.forward(0.1)
+        time.sleep(1)
+        motorR.backward()
+        time.sleep(1)
+        motorR.stop()
+        
+        motorL.forward()
+        time.sleep(1)
+        motorL.forward(0.5)
+        time.sleep(1)
+        motorL.forward(0.1)
+        time.sleep(1)
+        motorL.backward()
+        time.sleep(1)
+        motorL.stop()   
     
 btn = Button(25)
 
