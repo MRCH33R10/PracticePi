@@ -20,7 +20,7 @@ def pressed():
     global blink
     blink = False
     print("button was pressed")
-    sys.exit()
+    blink_thread.stop()
 def blink_led():
     while blink:
         btn.when_pressed = pressed
