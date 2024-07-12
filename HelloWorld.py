@@ -51,7 +51,6 @@ btn.when_pressed = pressed
 blink_thread = Thread(target=blink_led)
 blink_thread.start()
 
-pause()
 
 
          
