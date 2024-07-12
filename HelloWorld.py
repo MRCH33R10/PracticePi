@@ -15,29 +15,28 @@ motorL = Motor(27, 24)
 
 btn = Button(25)
 
-try:
-    while btn.when_released:
-        motorR.forward()
-        time.sleep(1)
-        motorR.forward(0.5)
-        time.sleep(1)
-        motorR.forward(0.1)
-        time.sleep(1)
-        motorR.backward()
-        time.sleep(1)
-        motorR.stop()
-        
-        motorL.forward()
-        time.sleep(1)
-        motorL.forward(0.5)
-        time.sleep(1)
-        motorL.forward(0.1)
-        time.sleep(1)
-        motorL.backward()
-        time.sleep(1)
-        motorL.stop()
-finally:
-    GPIO.cleanup()
+
+while btn.when_released:
+    motorR.forward()
+    time.sleep(1)
+    motorR.forward(0.5)
+    time.sleep(1)
+    motorR.forward(0.1)
+    time.sleep(1)
+    motorR.backward()
+    time.sleep(1)
+    motorR.stop()
+    
+    motorL.forward()
+    time.sleep(1)
+    motorL.forward(0.5)
+    time.sleep(1)
+    motorL.forward(0.1)
+    time.sleep(1)
+    motorL.backward()
+    time.sleep(1)
+    motorL.stop()
+
          
 # import signal                   
 # import sys
