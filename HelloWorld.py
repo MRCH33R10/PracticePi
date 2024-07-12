@@ -23,7 +23,7 @@ def waitncheck():
 def pressed():
     global blink
     blink = False
-    print("bye")
+    print("Bye")
     
 def blink_led():
     while blink:
