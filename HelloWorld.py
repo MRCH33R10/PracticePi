@@ -15,7 +15,7 @@ led2 = LED(24)
 button = Button(25)
 
 try:
-  while true:
+  while True:
     motor1.forward()
     time.sleep(1)
     motor1.forward(0.5)
