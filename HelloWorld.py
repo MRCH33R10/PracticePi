@@ -13,13 +13,13 @@ motorR = Motor(22, 23)
 #GPIO24 Left:Backward
 motorL = Motor(27, 24)
 
-def ButtonPin_Callback(channel):
+def ButtonPin_callback(channel):
   ext = False
   
 ButtonPin = 25
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(ButtonPin, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-GPIO.add_event_detect(ButtonPin, GPIO.BOTH, Callback = ButtonPin_Callback, bouncetime = 50)
+GPIO.add_event_detect(ButtonPin, GPIO.BOTH, Callback = ButtonPin_callback, bouncetime = 50)
 
 while ext == True:
   motorR.forward()
