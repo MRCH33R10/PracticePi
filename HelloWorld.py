@@ -6,8 +6,7 @@ import sys
 import time
 
 
-print("Hello to this great and prosperous world and to all who inhabit it, ps this is editted")
-print("editted from ipad")
+print("Hello")
 
 #GPIO22 Right:Forward
 #GPIO23 Right:Backward
@@ -47,8 +46,9 @@ def blink_led():
         waitncheck()
         motorL.backward()
         waitncheck()
-        motorL.stop()   
-    
+        motorL.stop()
+    print("editted from ipad")
+            
 btn = Button(25)
 btn.when_pressed = pressed
 
