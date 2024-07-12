@@ -14,7 +14,7 @@ motorR = Motor(22, 23)
 #GPIO24 Left:Backward
 motorL = Motor(27, 24)
 
-def pressed:
+def pressed():
     sys.exit()
 
 btn = Button(25)
