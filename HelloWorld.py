@@ -15,12 +15,14 @@ motorR = Motor(22, 23)
 motorL = Motor(27, 24)
 
 def pressed():
+    print("button was pressed")
     sys.exit()
 
 btn = Button(25)
 btn.when_pressed = pressed
 
 while True:
+    btn.when_pressed = pressed
     motorR.forward()
     time.sleep(1)
     motorR.forward(0.5)
