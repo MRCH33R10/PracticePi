@@ -16,7 +16,7 @@ motorL = Motor(27, 24)
 btn = Button(25)
 
 
-while btn.when_released:
+while not btn.is_pressed:
     motorR.forward()
     time.sleep(1)
     motorR.forward(0.5)
