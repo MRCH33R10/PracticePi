@@ -19,7 +19,7 @@ def ButtonPin_Callback(channel):
 ButtonPin = 25
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(ButtonPin, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-GPIO.add_event_detect(ButtonPin, GPIO.BOTH, callback = ButtonPin_Callback, bouncetime = 50)
+GPIO.add_event_detect(ButtonPin, GPIO.BOTH, Callback = ButtonPin_Callback, bouncetime = 50)
 
 while ext == True:
   motorR.forward()
