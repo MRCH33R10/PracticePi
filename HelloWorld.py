@@ -23,7 +23,7 @@ def waitncheck():
 def pressed():
     global blink
     blink = False
-    print("button was pressed")
+    print("bye")
     
 def blink_led():
     while blink:
@@ -47,7 +47,7 @@ def blink_led():
         motorL.backward()
         waitncheck()
         motorL.stop()
-    print("editted from ipad")
+
             
 btn = Button(25)
 btn.when_pressed = pressed
