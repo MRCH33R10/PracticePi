@@ -17,11 +17,7 @@ motorL = Motor(27, 24)
 def pressed():
     print("button was pressed")
     sys.exit()
-
-btn = Button(25)
-btn.when_pressed = pressed
-
-while True:
+def released():
     btn.when_pressed = pressed
     motorR.forward()
     time.sleep(1)
@@ -41,7 +37,12 @@ while True:
     time.sleep(1)
     motorL.backward()
     time.sleep(1)
-    motorL.stop()
+    motorL.stop()   
+    
+btn = Button(25)
+btn.when_pressed = pressed
+btn.when_released = released
+
 
          
 # import signal                   
