@@ -20,7 +20,7 @@ def pressed():
     global blink
     blink = False
     print("button was pressed")
-    blink_thread.stop()
+    stop_threads = True
 def blink_led():
     while blink:
         btn.when_pressed = pressed
@@ -45,10 +45,10 @@ def blink_led():
         motorL.stop()   
     
 btn = Button(25)
-
+stop_threads = False
 btn.when_pressed = pressed
 
-blink_thread = Thread(target=blink_led)
+blink_thread = Thread(target=blink_ledargs =(lambda : stop_threads, ))
 blink_thread.start()
 
 
