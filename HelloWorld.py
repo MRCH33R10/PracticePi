@@ -19,11 +19,13 @@ blink = True
 def waitncheck():
     time.sleep(1)
     if (blink == False):
-        sys.exit("BBye")
+        quit()
+        
 def pressed():
     global blink
     blink = False
     print("button was pressed")
+    
 def blink_led():
     while blink:
         btn.when_pressed = pressed
