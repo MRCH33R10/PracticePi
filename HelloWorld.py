@@ -15,10 +15,10 @@ motorR = Motor(22, 23)
 motorL = Motor(27, 24)
 
 stgenum = iter(("blink", "close"))
+i = next(stgenum)
 
 def pressed():
     i = next(stgenum)
-    print("Bye")
 
 def waitncheck():
     time.sleep(1)
@@ -27,8 +27,6 @@ def waitncheck():
         exit()
     
 def blink_led():
-    global i
-    i = next(stgenum)
     while i == "blink":
         btn.when_pressed = pressed
         motorR.forward()
