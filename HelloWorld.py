@@ -1,8 +1,6 @@
-from gpiozero import Motor
-from gpiozero import Button
+from gpiozero import Motor, Button
 from threading import Thread
 from signal import pause
-import sys
 import time
 
 print("Hello")
@@ -18,68 +16,50 @@ stgenum = iter(("blink", "close"))
 i = next(stgenum)
 
 def pressed():
-    i = next(stgenum)
+    global i
+    try:
+        i = next(stgenum)
+    except StopIteration:
+        # Reset the generator if it reaches the end
+        stgenum = iter(("blink", "close"))
+        i = next(stgenum)
 
 def waitncheck():
+    global i
     time.sleep(1)
-    if (i == "close"):
-        exit()
-    
-def blink_led():
-    while i == "blink":
-        btn.when_pressed = pressed
-        motorR.forward()
-        waitncheck()
-        motorR.forward(0.5)
-        waitncheck()
-        motorR.forward(0.1)
-        waitncheck()
-        motorR.backward()
-        waitncheck()
-        motorR.stop()
-        
-        motorL.forward()
-        waitncheck()
-        motorL.forward(0.5)
-        waitncheck()
-        motorL.forward(0.1)
-        waitncheck()
-        motorL.backward()
-        waitncheck()
-        motorL.stop()
+    if i == "close":
+        sys.exit()
 
-            
+def blink_led():
+    while True:
+        if i == "blink":
+            btn.when_pressed = pressed
+            motorR.forward()
+            waitncheck()
+            motorR.forward(0.5)
+            waitncheck()
+            motorR.forward(0.1)
+            waitncheck()
+            motorR.backward()
+            waitncheck()
+            motorR.stop()
+
+            motorL.forward()
+            waitncheck()
+            motorL.forward(0.5)
+            waitncheck()
+            motorL.forward(0.1)
+            waitncheck()
+            motorL.backward()
+            waitncheck()
+            motorL.stop()
+        else:
+            time.sleep(0.1)
+
 btn = Button(25)
 btn.when_pressed = pressed
 
 blink_thread = Thread(target=blink_led)
 blink_thread.start()
 
-
-
-         
-# import signal                   
-# import sys
-# import RPi.GPIO as GPIO
-
-# BUTTON_GPIO = 25
-
-# def signal_handler(sig, frame):
-#     GPIO.cleanup()
-#     sys.exit(0)
-
-# def button_callback(channel):
-#     if not GPIO.input(BUTTON_GPIO):
-#         print("Button pressed!")
-#     else:
-#         print("Button released!")
-
-# if __name__ == '__main__':
-#     GPIO.setmode(GPIO.BCM)
-#     GPIO.setup(BUTTON_GPIO, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-    
-#     GPIO.add_event_detect(BUTTON_GPIO, GPIO.BOTH, 
-#             callback=button_callback, bouncetime=50)
-    
-#     signal.signal(signal.SIGINT, signal_handler)
-#     signal.pause()
+pause()  # Keep the main thread running
