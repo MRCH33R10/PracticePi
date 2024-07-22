@@ -20,11 +20,10 @@ i = next(stgenum)
 def pressed():
     i = next(stgenum)
 
-# def waitncheck():
-#     time.sleep(1)
-#     if (i == "close"):
-#         raise StopIteration
-#         exit()
+def waitncheck():
+    time.sleep(1)
+    if (i == "close"):
+        exit()
     
 def blink_led():
     while i == "blink":
@@ -50,11 +49,11 @@ def blink_led():
         motorL.stop()
 
             
-# btn = Button(25)
-# btn.when_pressed = pressed
+btn = Button(25)
+btn.when_pressed = pressed()
 
-# blink_thread = Thread(target=blink_led)
-# blink_thread.start()
+blink_thread = Thread(target=blink_led)
+blink_thread.start()
 
 
 
