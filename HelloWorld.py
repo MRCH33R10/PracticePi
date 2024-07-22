@@ -1,6 +1,8 @@
-from gpiozero import Motor, Button
+from gpiozero import Motor
+from gpiozero import Button
 from threading import Thread
 from signal import pause
+import sys
 import time
 
 print("Hello")
@@ -16,50 +18,39 @@ stgenum = iter(("blink", "close"))
 i = next(stgenum)
 
 def pressed():
-    global i
-    try:
-        i = next(stgenum)
-    except StopIteration:
-        # Reset the generator if it reaches the end
-        stgenum = iter(("blink", "close"))
-        i = next(stgenum)
+    i = next(stgenum)
 
 def waitncheck():
-    global i
     time.sleep(1)
-    if i == "close":
-        sys.exit()
-
+    if (i == "close"):
+        quit()
+    
 def blink_led():
-    while True:
-        if i == "blink":
-            btn.when_pressed = pressed
-            motorR.forward()
-            waitncheck()
-            motorR.forward(0.5)
-            waitncheck()
-            motorR.forward(0.1)
-            waitncheck()
-            motorR.backward()
-            waitncheck()
-            motorR.stop()
+    while i == "blink":
+        btn.when_pressed = pressed
+        motorR.forward()
+        waitncheck()
+        motorR.forward(0.5)
+        waitncheck()
+        motorR.forward(0.1)
+        waitncheck()
+        motorR.backward()
+        waitncheck()
+        motorR.stop()
+        
+        motorL.forward()
+        waitncheck()
+        motorL.forward(0.5)
+        waitncheck()
+        motorL.forward(0.1)
+        waitncheck()
+        motorL.backward()
+        waitncheck()
+        motorL.stop()
 
-            motorL.forward()
-            waitncheck()
-            motorL.forward(0.5)
-            waitncheck()
-            motorL.forward(0.1)
-            waitncheck()
-            motorL.backward()
-            waitncheck()
-            motorL.stop()
-        else:
-            time.sleep(0.1)
-
+            
 btn = Button(25)
 btn.when_pressed = pressed
 
 blink_thread = Thread(target=blink_led)
 blink_thread.start()
-
-pause()  # Keep the main thread running
