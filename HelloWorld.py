@@ -14,19 +14,20 @@ motorR = Motor(22, 23)
 #GPIO27 Left:Forward
 #GPIO24 Left:Backward
 motorL = Motor(27, 24)
-blink = True
+
+stgenum = iter(("blink", "close"))
+
+def pressed():
+    next(stgenum)
+    print("Bye")
+
 def waitncheck():
     time.sleep(1)
-    if (blink == False):
+    if (blink == "close"):
         quit()
-        
-def pressed():
-    global blink
-    blink = False
-    print("Bye")
     
 def blink_led():
-    while blink:
+    while blink == "blink":
         btn.when_pressed = pressed
         motorR.forward()
         waitncheck()
