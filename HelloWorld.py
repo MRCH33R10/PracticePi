@@ -14,7 +14,7 @@ motorR = Motor(22, 23)
 #GPIO24 Left:Backward
 motorL = Motor(27, 24)
 
-stgenum = 0
+global stgenum = 0
 
 def pressed():
     stgenum += 1
