@@ -17,7 +17,7 @@ motorL = Motor(27, 24)
 stgenum = 0
 
 def pressed():
-    stgenum++
+    stgenum += 1
 
 def waitncheck():
     time.sleep(1)
