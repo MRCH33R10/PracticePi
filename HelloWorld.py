@@ -15,6 +15,7 @@ motorR = Motor(22, 23)
 motorL = Motor(27, 24)
 
 global stgenum
+stgenum = 0
 
 def pressed():
     stgenum += 1
@@ -25,7 +26,6 @@ def waitncheck():
         quit()
     
 def blink_led():
-    stgenum = 0
     while stgenum == 0:
         btn.when_pressed = pressed
         motorR.forward()
