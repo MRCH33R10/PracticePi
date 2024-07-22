@@ -27,7 +27,8 @@ def waitncheck():
         quit()
     
 def blink_led():
-    while blink == "blink":
+    i = next(stgenum)
+    while i == "blink":
         btn.when_pressed = pressed
         motorR.forward()
         waitncheck()
