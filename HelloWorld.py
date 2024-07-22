@@ -23,6 +23,7 @@ def pressed():
 def waitncheck():
     time.sleep(1)
     if (i == "close"):
+        raise StopIteration
         exit()
     
 def blink_led():
