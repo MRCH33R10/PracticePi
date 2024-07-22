@@ -5,8 +5,6 @@ from signal import pause
 import sys
 import time
 
-global i
-
 print("Hello")
 
 #GPIO22 Right:Forward
@@ -28,6 +26,7 @@ def waitncheck():
         quit()
     
 def blink_led():
+    global i
     i = next(stgenum)
     while i == "blink":
         btn.when_pressed = pressed
