@@ -5,6 +5,7 @@ from signal import pause
 import sys
 import time
 
+global i
 
 print("Hello")
 
@@ -18,7 +19,7 @@ motorL = Motor(27, 24)
 stgenum = iter(("blink", "close"))
 
 def pressed():
-    global i = next(stgenum)
+    i = next(stgenum)
     print("Bye")
 
 def waitncheck():
