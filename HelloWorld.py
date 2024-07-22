@@ -23,7 +23,7 @@ def pressed():
 def waitncheck():
     time.sleep(1)
     if (i == "close"):
-        quit()
+        exit()
     
 def blink_led():
     global i
