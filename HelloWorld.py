@@ -50,7 +50,7 @@ def blink_led():
 
             
 btn = Button(25)
-btn.when_pressed = pressed()
+btn.when_pressed = pressed
 
 blink_thread = Thread(target=blink_led)
 blink_thread.start()
