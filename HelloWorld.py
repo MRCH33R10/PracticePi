@@ -22,7 +22,7 @@ def pressed():
 def waitncheck():
     time.sleep(1)
     if not stgenum:
-        quit()
+        exit()
     
 def blink_led():
     while stgenum:
