@@ -24,7 +24,7 @@ def waitncheck():
     time.sleep(1)
     if not stgenum:
         print("bye")
-        sys.exit()
+        exit_program()
 
 def blink_led():
     while stgenum:
