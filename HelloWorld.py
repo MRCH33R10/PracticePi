@@ -45,9 +45,8 @@ def blink_led():
         motorL.backward()
         waitncheck()
         motorL.stop()
-
-            
-btn = Button(25)
+        
+global btn = Button(25)
 btn.when_pressed = pressed
 
 blink_thread = Thread(target=blink_led)
