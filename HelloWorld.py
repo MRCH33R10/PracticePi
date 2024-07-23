@@ -15,18 +15,17 @@ motorR = Motor(22, 23)
 motorL = Motor(27, 24)
 
 global stgenum
-stgenum = 0
 
 def pressed():
-    stgenum += 1
+    stgenum = False
 
 def waitncheck():
     time.sleep(1)
-    if (stgenum == 1):
+    if not stgenum:
         quit()
     
 def blink_led():
-    while stgenum == 0:
+    while stgenum:
         motorR.forward()
         waitncheck()
         motorR.forward(0.5)
