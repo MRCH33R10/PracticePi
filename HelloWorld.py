@@ -27,7 +27,7 @@ def waitncheck():
         print("bye")
         stgenum = False
         
-def mtr(spdl,spdr):
+def mtr(*spdl,*spdr):
     if not spdl:
         motorR.forward(spdr) if spdr > 0 else motorR.forward(abs(spdr)) if spdr < 0 else motorR.stop()
     if not spdl:
