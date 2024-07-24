@@ -22,11 +22,11 @@ def pressed():
 btn = Button(25)
 btn.when_pressed = pressed
 
-# def waitncheck():
-#     time.sleep(1)
-#     if not stgenum:
-#         print("bye")
-#         quit()
+def waitncheck():
+    time.sleep(1)
+    if not stgenum:
+        print("bye")
+        quit()
 
 def blink_led():
     while stgenum:
