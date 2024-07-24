@@ -38,8 +38,7 @@ def blink_led():
     global stgenum
     while stgenum:
         for x in seq:
-            print(length(seq))
-            mtr(x)
+            mtr(x[0],x[1])
             waitncheck()
     print("bye")
     exit()
