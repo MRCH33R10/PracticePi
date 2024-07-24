@@ -35,13 +35,15 @@ def mtr(spdl,spdr):
             
 def blink_led():
     n = None
+    x = 0
     seq = ((n,1.0),(n,0.5),(n,-1.0),(0.0,n),(1.0,n),(0.5,n),(-1.0,n),(0.0,n))
     
     global stgenum
     while stgenum:
-        for x in seq:
-            mtr(x[0],x[1])
-            waitncheck()
+        mtr(seq[x][0],seq[x][1])
+        waitncheck()
+        x += 1 if x < len(seq) else x = 0
+        
     print("bye")
     exit()
 
