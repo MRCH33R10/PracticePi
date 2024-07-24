@@ -9,6 +9,7 @@ print("Hello")
 print("World")
 for x in range(5):
   print(x)
+  quit()
 print("also")
 # # GPIO22 Right:Forward
 # # GPIO23 Right:Backward
