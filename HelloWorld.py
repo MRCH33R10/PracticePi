@@ -27,29 +27,19 @@ def waitncheck():
         print("bye")
         stgenum = False
         
-
+def mtr(spdl,spdr):
+    motorR.forward(spdr) if spdr > 0 else motorR.forward(spdr) if spdr < 0 else motorR.stop() if spdr == None
+    motorL.forward(spdl) if spdl > 0 else motorL.forward(spdl) if spdl < 0 else motorL.stop() if spdl == None
+            
 def blink_led():
+    n = None
+    seq = ((n,1),(n,0.5),(n,-1),(0,n),(1,n),(0.5,n),(-1,n),(0,n))
+    
     global stgenum
     while stgenum:
-        motorR.forward()
-        waitncheck()
-        motorR.forward(0.5)
-        waitncheck()
-        motorR.forward(0.1)
-        waitncheck()
-        motorR.backward()
-        waitncheck()
-        motorR.stop()
-
-        motorL.forward()
-        waitncheck()
-        motorL.forward(0.5)
-        waitncheck()
-        motorL.forward(0.1)
-        waitncheck()
-        motorL.backward()
-        waitncheck()
-        motorL.stop()
+        for x in seq:
+            mtr(x)
+            waitncheck
     print("bye")
     exit()
 
