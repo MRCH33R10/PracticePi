@@ -25,6 +25,10 @@ def waitncheck():
     time.sleep(1)
         
 def mtr(spdl,spdr):
+    print(spdr)
+    print(abs(spdr))
+    print(spdl)
+    print(abs(spdl))    
     if isinstance(spdr, float):
         if spdr > 0:
             motorR.forward(spdr)  
