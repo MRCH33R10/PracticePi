@@ -1,7 +1,7 @@
 from gpiozero import Motor
 from gpiozero import Button
-from threading import Thread
 from signal import pause
+import threading
 import sys
 import time
 
