@@ -17,12 +17,10 @@ stgenum = True
 print("Hello")
 
 def pressed():
-    global stgenum
     print("Pressed")
     stgenum = False
 
 def waitncheck():
-    global stgenum
     time.sleep(1)
     print(stgenum)
     if not stgenum:
