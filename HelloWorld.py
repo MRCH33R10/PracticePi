@@ -26,7 +26,7 @@ def waitncheck():
         time.sleep(0.1)
         if not stgenum:
             stgenum = False
-            blink_thread.join()
+            blink_thread.exit()
             blink_thread.start()
 
         
