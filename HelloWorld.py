@@ -23,10 +23,10 @@ def pressed():
 
 def waitncheck():
     global stgenum
-    time.sleep(1)
-    print(stgenum)
-    if not stgenum:
-        exit()
+    for x in range(9)
+        time.sleep(0.1)
+        if not stgenum:
+            exit()
         
 
 def blink_led():
