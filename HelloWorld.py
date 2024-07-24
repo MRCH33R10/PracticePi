@@ -28,9 +28,9 @@ def waitncheck():
         stgenum = False
         
 def mtr(spdl,spdr):
-    if isinstance(spdr, int):
+    if isinstance(spdr, float):
         motorR.forward(spdr) if spdr > 0 else motorR.forward(abs(spdr)) if spdr < 0 else motorR.stop()
-    if isinstance(spdl, int):
+    if isinstance(spdl, float):
         motorL.forward(spdl) if spdl > 0 else motorL.forward(abs(spdl)) if spdl < 0 else motorL.stop()
             
 def blink_led():
