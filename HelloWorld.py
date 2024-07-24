@@ -27,15 +27,15 @@ def waitncheck():
         print("bye")
         stgenum = False
         
-def mtr(*spdl,*spdr):
-    if not spdl:
+def mtr(spdl,spdr):
+    if is_float(spdl):
         motorR.forward(spdr) if spdr > 0 else motorR.forward(abs(spdr)) if spdr < 0 else motorR.stop()
-    if not spdl:
+    if is_float(spdl):
         motorL.forward(spdl) if spdl > 0 else motorL.forward(abs(spdl)) if spdl < 0 else motorL.stop()
             
 def blink_led():
     n = None
-    seq = ((n,1),(n,0.5),(n,-1),(0,n),(1,n),(0.5,n),(-1,n),(0,n))
+    seq = ((n,1.0),(n,0.5),(n,-1.0),(0.0,n),(1.0,n),(0.5,n),(-1.0,n),(0.0,n))
     
     global stgenum
     while stgenum:
