@@ -5,56 +5,47 @@ from signal import pause
 import sys
 import time
 
+# Right:(Forward,Backward).(GPIO22,GPIO23)
+# Left :(Forward,Backward).(GPIO27,GPIO24)
+
+motorR = Motor(22, 23)
+motorL = Motor(27, 24)
+
 print("Hello")
-print("World")
-for x in range(5):
-  print(x)
-  quit()
-print("also")
-# # GPIO22 Right:Forward
-# # GPIO23 Right:Backward
-# motorR = Motor(22, 23)
-# # GPIO27 Left:Forward
-# # GPIO24 Left:Backward
-# motorL = Motor(27, 24)
 
-# stgenum = True
 
-# def pressed():
-#     stgenum = False
+def pressed():
+    quit()
 
-# def waitncheck():
-#     time.sleep(1)
-#     if not stgenum:
-#         print("bye")
-#         quit()
+def waitncheck():
+    time.sleep(1)
 
-# def blink_led():
-#     while stgenum:
-#         motorR.forward()
-#         waitncheck()
-#         motorR.forward(0.5)  # Adjust this line if Motor does not support this directly
-#         waitncheck()
-#         motorR.forward(0.1)  # Adjust this line if Motor does not support this directly
-#         waitncheck()
-#         motorR.backward()
-#         waitncheck()
-#         motorR.stop()
+def blink_led():
+    while stgenum:
+        motorR.forward()
+        waitncheck()
+        motorR.forward(0.5)  # Adjust this line if Motor does not support this directly
+        waitncheck()
+        motorR.forward(0.1)  # Adjust this line if Motor does not support this directly
+        waitncheck()
+        motorR.backward()
+        waitncheck()
+        motorR.stop()
 
-#         motorL.forward()
-#         waitncheck()
-#         motorL.forward(0.5)  # Adjust this line if Motor does not support this directly
-#         waitncheck()
-#         motorL.forward(0.1)  # Adjust this line if Motor does not support this directly
-#         waitncheck()
-#         motorL.backward()
-#         waitncheck()
-#         motorL.stop()
+        motorL.forward()
+        waitncheck()
+        motorL.forward(0.5)  # Adjust this line if Motor does not support this directly
+        waitncheck()
+        motorL.forward(0.1)  # Adjust this line if Motor does not support this directly
+        waitncheck()
+        motorL.backward()
+        waitncheck()
+        motorL.stop()
 
-# btn = Button(25)
-# btn.when_pressed = pressed
+btn = Button(25)
+btn.when_pressed = pressed
 
-# blink_thread = Thread(target=blink_led)
-# blink_thread.start()
+blink_thread = Thread(target=blink_led)
+blink_thread.start()
 
-# pause()
+pause()
