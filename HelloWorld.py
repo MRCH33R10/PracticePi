@@ -12,13 +12,13 @@ motorR = Motor(22, 23)
 motorL = Motor(27, 24)
 
 global stgenum
-stgenum = True
+stgenum = bool(True)
 
 print("Hello")
 
 def pressed():
     print("Pressed")
-    stgenum = False
+    stgenum = bool(False)
 
 def waitncheck():
     time.sleep(1)
