@@ -25,13 +25,12 @@ def waitncheck():
     for x in range(9):
         time.sleep(0.1)
         if not stgenum:
-            print ("bye")
-            break
+            quit()
 
         
 
 def blink_led():
-    while stgenum:
+    while true:
         motorR.forward()
         waitncheck()
         motorR.forward(0.5)  # Adjust this line if Motor does not support this directly
