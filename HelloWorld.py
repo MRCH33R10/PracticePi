@@ -7,7 +7,7 @@ import time
 
 print("Hello")
 print("World")
-for x in 5:
+for x in range(5):
   print(x)
 print("also")
 # # GPIO22 Right:Forward
