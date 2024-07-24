@@ -29,7 +29,7 @@ def mtr(spdl,spdr):
         if spdr > 0:
             motorR.forward(spdr)  
         elif spdr < 0:
-            motorR.forward(abs(spdr))  
+            motorR.backward(abs(spdr))  
         else: 
             motorR.stop()
             
@@ -37,7 +37,7 @@ def mtr(spdl,spdr):
         if spdl > 0:
             motorL.forward(spdl)  
         elif spdl < 0:
-            motorL.forward(abs(spdl))  
+            motorL.backward(abs(spdl))  
         else: 
             motorL.stop()
             
