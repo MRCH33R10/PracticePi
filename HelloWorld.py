@@ -17,18 +17,20 @@ stgenum = True
 print("Hello")
 
 def pressed():
+    global stgenum
     print("Pressed")
     stgenum = False
 
 def waitncheck():
+    global stgenum
     time.sleep(1)
     print(stgenum)
     if not stgenum:
+        blink_thread.stop()
         quit()
 
 def blink_led():
-    global stgenum
-    while stgenum:
+    while True:
         motorR.forward()
         waitncheck()
         motorR.forward(0.5)  # Adjust this line if Motor does not support this directly
