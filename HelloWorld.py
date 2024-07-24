@@ -26,7 +26,8 @@ def waitncheck():
         time.sleep(0.1)
         if not stgenum:
             print ("bye")
-            exit()
+            break
+
         
 
 def blink_led():
@@ -50,6 +51,7 @@ def blink_led():
         motorL.backward()
         waitncheck()
         motorL.stop()
+    exit()
 btn = Button(25)
 btn.when_pressed = pressed
 
