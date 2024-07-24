@@ -15,6 +15,7 @@ stgenum = True
 print("Hello")
 
 def pressed():
+    print("Pressed")
     quit()
 
 def waitncheck():
