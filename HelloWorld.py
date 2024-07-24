@@ -50,11 +50,10 @@ def blink_led():
         motorL.backward()
         waitncheck()
         motorL.stop()
+    quit()
 
 btn = Button(25)
 btn.when_pressed = pressed
 
 blink_thread = Thread(target=blink_led)
 blink_thread.start()
-
-pause()
