@@ -22,10 +22,9 @@ def pressed():
 
 def waitncheck():
     global stgenum
-    for x in range(9):
-        time.sleep(0.1)
-        if not stgenum:
-            exit()
+    time.sleep(1)
+    if not stgenum:
+        break
 
         
 
