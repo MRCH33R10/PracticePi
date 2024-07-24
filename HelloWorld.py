@@ -20,10 +20,11 @@ def pressed():
     stgenum = False
 
 btn = Button(25)
-btn.when_pressed = pressed
+
 
 def waitncheck():
     time.sleep(1)
+    btn.when_pressed = pressed
     if not stgenum:
         print("bye")
         quit()
