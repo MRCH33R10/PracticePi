@@ -24,7 +24,7 @@ def waitncheck():
     global stgenum
     time.sleep(1)
     if not stgenum:
-        break
+        return break
 
         
 
