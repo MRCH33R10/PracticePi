@@ -24,19 +24,11 @@ def waitncheck():
     global stgenum
     time.sleep(1)
     if not stgenum:
-        break
-
+        exit()
         
 
 def blink_led():
     global stgenum
-    
-    def waitncheck():
-        global stgenum
-        time.sleep(1)
-        if not stgenum:
-            return break
-    
     while stgenum:
         motorR.forward()
         waitncheck()
@@ -65,3 +57,5 @@ btn.when_pressed = pressed
 
 blink_thread = Thread(target=blink_led)
 blink_thread.start()
+
+pause()
