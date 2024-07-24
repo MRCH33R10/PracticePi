@@ -10,9 +10,9 @@ import time
 
 motorR = Motor(22, 23)
 motorL = Motor(27, 24)
+stgenum = True
 
 print("Hello")
-
 
 def pressed():
     quit()
