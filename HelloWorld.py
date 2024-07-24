@@ -28,8 +28,21 @@ def waitncheck():
         stgenum = False
         
 def mtr(spdl,spdr):
-    motorR.forward(spdr) if spdr > 0 else motorR.forward(abs(spdr)) if spdr < 0 else pmotorR.stop() if spdr == 0 else return
-    motorL.forward(spdl) if spdl > 0 else motorL.forward(abs(spdl)) if spdl < 0 else pmotorL.stop() if spdl == 0 else return
+    if spdr > 0:
+        motorR.forward(spdr)
+    elif spdr < 0:
+        motorR.forward(abs(spdr))
+    else:
+        motorR.stop()
+    
+    if spdl > 0:
+        motorL.forward(spdl)
+    elif spdl < 0:
+        motorL.forward(abs(spdl))
+    else:
+        motorL.stop()    
+    # motorR.forward(spdr) if spdr > 0 else motorR.forward(abs(spdr)) if spdr < 0 else pmotorR.stop() if spdr == 0 else return
+    # motorL.forward(spdl) if spdl > 0 else motorL.forward(abs(spdl)) if spdl < 0 else pmotorL.stop() if spdl == 0 else return
             
 def blink_led():
     n = None
