@@ -24,12 +24,19 @@ def waitncheck():
     global stgenum
     time.sleep(1)
     if not stgenum:
-        blink_led
+        break
 
         
 
 def blink_led():
     global stgenum
+    
+    def waitncheck():
+    global stgenum
+    time.sleep(1)
+    if not stgenum:
+        break
+    
     while stgenum:
         motorR.forward()
         waitncheck()
