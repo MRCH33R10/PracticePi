@@ -22,6 +22,7 @@ def pressed():
 
 def waitncheck():
     time.sleep(1)
+    print(stgenum)
     if not stgenum:
         quit()
 
