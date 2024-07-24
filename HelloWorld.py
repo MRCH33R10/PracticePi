@@ -22,7 +22,7 @@ def pressed():
 
 def waitncheck():
     global stgenum
-    time.sleep(0.1)
+    time.sleep(1)
         
 def mtr(spdl,spdr):
     if isinstance(spdr, float):
