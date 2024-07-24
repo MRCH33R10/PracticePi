@@ -40,7 +40,7 @@ def blink_led():
         for x in seq:
             print(x)
             mtr(x)
-            waitncheck
+            waitncheck()
     print("bye")
     exit()
 
