@@ -25,15 +25,13 @@ def waitncheck():
     for x in range(9):
         time.sleep(0.1)
         if not stgenum:
-            stgenum = False
-            thread.join()
-            blink_thread.start()
+            quit()
 
         
 
 def blink_led():
     global stgenum
-    while stgenum:
+    while True:
         motorR.forward()
         waitncheck()
         motorR.forward(0.5)
