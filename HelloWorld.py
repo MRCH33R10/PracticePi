@@ -25,17 +25,20 @@ def waitncheck():
     for x in range(9):
         time.sleep(0.1)
         if not stgenum:
-            quit()
+            stgenum = False
+            blink_thread.join()
+            blink_thread.start()
 
         
 
 def blink_led():
-    while True:
+    global stgenum
+    while stgenum:
         motorR.forward()
         waitncheck()
-        motorR.forward(0.5)  # Adjust this line if Motor does not support this directly
+        motorR.forward(0.5)
         waitncheck()
-        motorR.forward(0.1)  # Adjust this line if Motor does not support this directly
+        motorR.forward(0.1)
         waitncheck()
         motorR.backward()
         waitncheck()
@@ -43,9 +46,9 @@ def blink_led():
 
         motorL.forward()
         waitncheck()
-        motorL.forward(0.5)  # Adjust this line if Motor does not support this directly
+        motorL.forward(0.5)
         waitncheck()
-        motorL.forward(0.1)  # Adjust this line if Motor does not support this directly
+        motorL.forward(0.1)
         waitncheck()
         motorL.backward()
         waitncheck()
