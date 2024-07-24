@@ -16,13 +16,15 @@ print("Hello")
 
 def pressed():
     print("Pressed")
-    quit()
+    stgenum = False
 
 def waitncheck():
     time.sleep(1)
+    if not stgenum:
+        quit()
 
 def blink_led():
-    while stgenum:
+    while True:
         motorR.forward()
         waitncheck()
         motorR.forward(0.5)  # Adjust this line if Motor does not support this directly
