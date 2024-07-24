@@ -35,7 +35,7 @@ def blink_led():
         global stgenum
         time.sleep(1)
         if not stgenum:
-            break
+            return break
     
     while stgenum:
         motorR.forward()
