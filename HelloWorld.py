@@ -50,7 +50,7 @@ def blink_led():
         waitncheck()
         motorL.stop()
 
-blink_led
+blink_led()
 
 # blink_thread = Thread(target=blink_led)
 # blink_thread.start()
