@@ -11,22 +11,25 @@ import time
 motorR = Motor(22, 23)
 motorL = Motor(27, 24)
 
-global stgenum
-stgenum = bool(True)
+
+stgenum = True
 
 print("Hello")
 
 def pressed():
+    global stgenum
     print("Pressed")
-    stgenum = bool(False)
+    stgenum = False
 
 def waitncheck():
+    global stgenum
     time.sleep(1)
     print(stgenum)
     if not stgenum:
         quit()
 
 def blink_led():
+    global stgenum
     while stgenum:
         motorR.forward()
         waitncheck()
