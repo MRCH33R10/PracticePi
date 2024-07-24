@@ -26,7 +26,7 @@ def waitncheck():
     time.sleep(1)
     print(stgenum)
     if not stgenum:
-        blink_thread.join()
+        exit()
         
 
 def blink_led():
