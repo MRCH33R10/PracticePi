@@ -42,8 +42,11 @@ def blink_led():
     while stgenum:
         mtr(seq[x][0],seq[x][1])
         waitncheck()
-        x += 1 if x < len(seq) else x = 0
-        
+        if x < (len(seq)-1):
+            x += 1 
+        else:
+            x = 0
+
     print("bye")
     exit()
 
