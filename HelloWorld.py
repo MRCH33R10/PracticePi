@@ -30,7 +30,7 @@ def waitncheck():
         
 
 def blink_led():
-    while True:
+    while stgenum:
         motorR.forward()
         waitncheck()
         motorR.forward(0.5)  # Adjust this line if Motor does not support this directly
