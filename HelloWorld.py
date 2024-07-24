@@ -22,10 +22,7 @@ def pressed():
 
 def waitncheck():
     global stgenum
-    time.sleep(1)
-    if not stgenum:
-        print("bye")
-        stgenum = False
+    time.sleep(0.1)
         
 def mtr(spdl,spdr):
     if isinstance(spdr, float):
@@ -53,10 +50,8 @@ def blink_led():
     while stgenum:
         mtr(seq[x][0],seq[x][1])
         waitncheck()
-        if x < (len(seq)-1):
-            x += 1 
-        else:
-            x = 0
+        if x < (len(seq)-1): x += 1 
+        else: x = 0
 
     print("bye")
     exit()
