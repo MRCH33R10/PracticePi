@@ -19,15 +19,9 @@ print("Hello")
 def pressed():
     global stgenum
     stgenum = False
-
-def waitncheck():
-    global stgenum
-    time.sleep(1)
-        
+    
 def mtr(spdl,spdr): 
     if isinstance(spdr, float):
-        print(spdr)
-        print(abs(spdr))
         if spdr > 0:
             motorR.forward(spdr)  
         elif spdr < 0:
@@ -35,9 +29,7 @@ def mtr(spdl,spdr):
         else: 
             motorR.stop()
             
-    if isinstance(spdl, float):
-        print(spdl)
-        print(abs(spdl))           
+    if isinstance(spdl, float):        
         if spdl > 0:
             motorL.forward(spdl)  
         elif spdl < 0:
@@ -53,7 +45,7 @@ def blink_led():
     global stgenum
     while stgenum:
         mtr(seq[x][0],seq[x][1])
-        waitncheck()
+        time.sleep(1)
         if x < (len(seq)-1): x += 1 
         else: x = 0
 
