@@ -22,20 +22,14 @@ def pressed():
     
 def mtr(spdl,spdr): 
     if isinstance(spdr, float):
-        if spdr > 0:
-            motorR.forward(spdr)  
-        elif spdr < 0:
-            motorR.backward(abs(spdr))  
-        else: 
-            motorR.stop()
+        if spdr > 0:   motorR.forward(spdr)  
+        elif spdr < 0: motorR.backward(abs(spdr))  
+        else:          motorR.stop()
             
     if isinstance(spdl, float):        
-        if spdl > 0:
-            motorL.forward(spdl)  
-        elif spdl < 0:
-            motorL.backward(abs(spdl))  
-        else: 
-            motorL.stop()
+        if spdl > 0:   motorL.forward(spdl)  
+        elif spdl < 0: motorL.backward(abs(spdl))  
+        else:          motorL.stop()
             
 def blink_led():
     n = None
