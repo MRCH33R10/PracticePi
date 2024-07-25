@@ -40,7 +40,7 @@ def mtr(spdl,spdr):
 def blink_led():
     n = None
     x = 0
-    seq = ((0.0,1.0),(n,0.5),(n,-1.0),(1.0,0.0),(0.5,n),(-1.0,n))
+    seq = ((0.0,1.0),(n,0.5),(n,0.1),(n,-1.0),(1.0,0.0),(0.5,n),(0.1,n),(-1.0,n))
     
     global stgenum
     while stgenum:
