@@ -10,8 +10,8 @@ import time
 motorR = Motor(22, 23)
 motorL = Motor(27, 24)
 
-
 stgenum = True
+n = None
 
 print("Hello")
 
@@ -31,12 +31,10 @@ def mtr(spdl,spdr):
         else:          motorL.stop()
             
 def blink_led():
-    n = None
+    global n, stgenum
     x = 0
     seq = ((0.0,1.0),(n,0.5),(n,0.1),(n,-1.0),
            (1.0,0.0),(0.5,n),(0.1,n),(-1.0,n))
-    
-    global stgenum
     while stgenum:
         mtr(seq[x][0],seq[x][1])
         time.sleep(0.5)
