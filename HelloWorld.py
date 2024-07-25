@@ -24,12 +24,10 @@ def waitncheck():
     global stgenum
     time.sleep(1)
         
-def mtr(spdl,spdr):
-    print(spdr)
-    print(abs(spdr))
-    print(spdl)
-    print(abs(spdl))    
+def mtr(spdl,spdr): 
     if isinstance(spdr, float):
+        print(spdr)
+        print(abs(spdr))
         if spdr > 0:
             motorR.forward(spdr)  
         elif spdr < 0:
@@ -38,6 +36,8 @@ def mtr(spdl,spdr):
             motorR.stop()
             
     if isinstance(spdl, float):
+        print(spdl)
+        print(abs(spdl))           
         if spdl > 0:
             motorL.forward(spdl)  
         elif spdl < 0:
