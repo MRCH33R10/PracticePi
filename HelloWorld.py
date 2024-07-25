@@ -34,7 +34,8 @@ def mtr(spdl,spdr):
 def blink_led():
     n = None
     x = 0
-    seq = ((0.0,1.0),(n,0.5),(n,0.1),(n,-1.0),(1.0,0.0),(0.5,n),(0.1,n),(-1.0,n))
+    seq = ((0.0,1.0),(n,0.5),(n,0.1),(n,-1.0),
+           (1.0,0.0),(0.5,n),(0.1,n),(-1.0,n))
     
     global stgenum
     while stgenum:
@@ -43,7 +44,7 @@ def blink_led():
         if x < (len(seq)-1): x += 1 
         else: x = 0
 
-    print("bye")
+    print("Bye")
     exit()
 
 btn = Button(25)
