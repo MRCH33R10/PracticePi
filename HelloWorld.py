@@ -45,7 +45,7 @@ def blink_led():
     global stgenum
     while stgenum:
         mtr(seq[x][0],seq[x][1])
-        time.sleep(1)
+        time.sleep(0.5)
         if x < (len(seq)-1): x += 1 
         else: x = 0
 
