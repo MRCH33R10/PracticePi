@@ -23,14 +23,13 @@ def mtr(spdl,spdr):
     if isinstance(spdr, float):
         if spdr > 0:   motorR.forward(spdr)  
         elif spdr < 0: motorR.backward(abs(spdr))  
-        else:          motorR.stop()
-            
+        else:          motorR.stop() 
     if isinstance(spdl, float):        
         if spdl > 0:   motorL.forward(spdl)  
         elif spdl < 0: motorL.backward(abs(spdl))  
         else:          motorL.stop()
             
-def blink_led():
+def MtrFunct():
     global n, stgenum
     x = 0
     seq = ((0.0,1.0),(n,0.5),(n,0.1),(n,-1.0),
@@ -40,12 +39,11 @@ def blink_led():
         time.sleep(0.5)
         if x < (len(seq)-1): x += 1 
         else: x = 0
-
     print("Bye")
     exit()
 
 btn = Button(25)
 btn.when_pressed = pressed
 
-blink_thread = threading.Thread(target=blink_led)
-blink_thread.start()
+Mtr_thread = threading.Thread(target=MtrFunct)
+Mtr_thread.start()
