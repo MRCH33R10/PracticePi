@@ -10,7 +10,7 @@ led = PWMLED(13)
 
 # Link the output of the rotary encoder to the LED's brightness,
 # scaling the value to half of the encoder's range.
-led.source = scaled_half(rotor.values)
+print(rotor.values)
 
 # Keep the program running to continue responding to encoder changes
 pause()
