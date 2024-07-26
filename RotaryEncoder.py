@@ -2,7 +2,7 @@ from gpiozero import RotaryEncoder
 from signal import pause
 
 # Define the pins connected to the rotary encoder
-encoder = RotaryEncoder(a=3, b=4, max_steps=0)
+encoder = RotaryEncoder(a=5, b=6, max_steps=0)
 
 def rotary_callback():
     print(f"Encoder value: {encoder.steps}")
