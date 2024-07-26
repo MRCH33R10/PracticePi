@@ -33,9 +33,9 @@ current_value = 0
 def rotary_callback(RoL):
     global current_value
     if (RoL == True):
-        if (current_value != MAX_VALUE): current_value += 1
+        if (current_value != MAX_VALUE): current_value -= 1
     elif (RoL == False):    
-        if (current_value != MIN_VALUE): current_value -= 1
+        if (current_value != MIN_VALUE): current_value += 1
     print(f"Encoder value: {current_value}")
 
 print("Rotary Encoder Test")
