@@ -28,16 +28,15 @@ MIN_VALUE = 0
 MAX_VALUE = 3
 
 def rotary_callback():
-    value = encoder.steps
     print(MIN_VALUE)
     print(MAX_VALUE)
-    if value < MIN_VALUE:
+    if encoder.steps < MIN_VALUE:
         encoder.steps = MIN_VALUE
-    elif value > MAX_VALUE:
+    elif encoder.steps > MAX_VALUE:
         encoder.steps = MAX_VALUE
       
     
-    print(f"Encoder value: {value}")
+    print(f"Encoder value: {encoder.steps}")
 
 print("Rotary Encoder Test")
 print("Rotate the encoder to see the changes in steps.")
