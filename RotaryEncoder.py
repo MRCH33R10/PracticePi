@@ -31,7 +31,7 @@ def rotary_callback():
     # Constrain the encoder value within the range
     value = encoder.steps % (MAX_VALUE + 1)
     if value < MIN_VALUE:
-        value += (MAX_VALUE + 1)
+        value += 1
     
     print(f"Encoder value: {value}")
 
