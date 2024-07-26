@@ -19,8 +19,8 @@
 
 from gpiozero import Button
 
-pin_a = Button(5,pull_up=True)         # Rotary encoder pin A connected to GPIO2
-pin_b = Button(6,pull_up=True)         # Rotary encoder pin B connected to GPIO3
+pin_a = Button(6,pull_up=True)         # Rotary encoder pin A connected to GPIO2
+pin_b = Button(5,pull_up=True)         # Rotary encoder pin B connected to GPIO3
 
 def pin_a_rising():                    # Pin A event handler
     if pin_b.is_pressed: print("-1")   # pin A rising while A is active is a clockwise turn
