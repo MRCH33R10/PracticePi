@@ -33,8 +33,10 @@ current_value = 0
 def rotary_callback(RoL):
     global current_value
     if (RoL == True):
+        print("right")
         if (current_value != MAX_VALUE): current_value -= 1
-    elif (RoL == False):    
+    elif (RoL == False):
+        print("left")
         if (current_value != MIN_VALUE): current_value += 1
     print(f"Encoder value: {current_value}")
 
