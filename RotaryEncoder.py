@@ -24,10 +24,10 @@ from signal import pause
 encoder = RotaryEncoder(a=5, b=6, max_steps=0)
 
 # Define the range limits
-MIN_VALUE = 0
+MIN_VALUE = -1
 MAX_VALUE = 3
 global value
-value = 0 
+
 def rotary_callback():
     # Constrain the encoder value within the range
     value = encoder.steps
