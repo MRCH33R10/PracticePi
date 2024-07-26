@@ -21,19 +21,18 @@ from gpiozero import RotaryEncoder
 from signal import pause
 
 # Define the pins connected to the rotary encoder
-encoder = RotaryEncoder(a=5, b=6, max_steps=0)
+encoder = RotaryEncoder(a=6, b=5, max_steps=0)
 
 # Define the range limits
 MIN_VALUE = 0
 MAX_VALUE = 3
-global value
 
 def rotary_callback():
     # Constrain the encoder value within the range
     value = encoder.steps
-    if value < MIN_VALUE:
+    if value <= MIN_VALUE:
         encoder.steps = MIN_VALUE
-    elif value > MAX_VALUE:
+    elif value >= MAX_VALUE:
         encoder.steps = MAX_VALUE
       
     
