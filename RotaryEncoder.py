@@ -28,7 +28,9 @@ MIN_VALUE = 0
 MAX_VALUE = 3
 
 def rotary_callback():
-    # Constrain the encoder value within the range
+    MIN_VALUE = 0
+    MAX_VALUE = 3
+
     value = encoder.steps
     if value == MIN_VALUE:
         encoder.steps = MIN_VALUE
