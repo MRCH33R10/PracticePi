@@ -28,8 +28,6 @@ MIN_VALUE = 0
 MAX_VALUE = 3
 
 def rotary_callback():
-    print(MIN_VALUE)
-    print(MAX_VALUE)
     if encoder.steps < MIN_VALUE:
         encoder.steps = MIN_VALUE
     elif encoder.steps > MAX_VALUE:
