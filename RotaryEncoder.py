@@ -27,25 +27,19 @@ encoder = RotaryEncoder(a=5, b=6, max_steps=0)
 MIN_VALUE = 0
 MAX_VALUE = 3
 
-# Initialize the current step value within the range
-current_value = 0
-
-def rotary_callback(RoL):
-    global current_value
-    if (RoL == True):
-        print("right")
-        if (current_value != MAX_VALUE): current_value -= 1
-    elif (RoL == False):
-        print("left")
-        if (current_value != MIN_VALUE): current_value += 1
-    print(f"Encoder value: {current_value}")
+def rotary_callback():
+    # Constrain the encoder value within the range
+    value = encoder.steps % (MAX_VALUE + 1)
+    if value < MIN_VALUE:
+        value += (MAX_VALUE + 1)
+    
+    print(f"Encoder value: {value}")
 
 print("Rotary Encoder Test")
 print("Rotate the encoder to see the changes in steps.")
 
 # Attach the callback to the rotary encoder
-encoder.when_rotated = rotary_callback(True)
-encoder.when_rotated = rotary_callback(False)
+encoder.when_rotated = rotary_callback
 
 # Keep the program running to listen for encoder changes
 pause()
