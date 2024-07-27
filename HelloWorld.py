@@ -49,3 +49,5 @@ btn2.when_pressed = pressed
 
 Mtr_thread = threading.Thread(target=MtrFunct)
 Mtr_thread.start()
+
+pause()
