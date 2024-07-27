@@ -35,8 +35,12 @@ def MtrFunct():
     seq = ((0.0,1.0),(n,0.5),(n,0.1),(n,-1.0),
            (1.0,0.0),(0.5,n),(0.1,n),(-1.0,n))
     while stgenum:
-        btn1 = Button(25) #formally 25
-        btn1.when_pressed = print("Hello")
+        btn1 = Button(25)  # Initialize button outside the loop
+    
+        def on_btn1_pressed():
+            print("Button 1 pressed")
+    
+        btn1.when_pressed = on_btn1_pressed
         mtr(seq[x][0],seq[x][1])
         time.sleep(0.5)
         if x < (len(seq)-1): x += 1 
