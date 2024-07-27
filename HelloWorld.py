@@ -42,7 +42,7 @@ def MtrFunct():
     print("Bye")
     exit()
 
-btn = Button(25)
+btn = Button(12) #formally 25
 btn.when_pressed = pressed
 
 Mtr_thread = threading.Thread(target=MtrFunct)
