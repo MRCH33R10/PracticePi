@@ -48,8 +48,8 @@ btn.when_pressed = pressed
 Mtr_thread = threading.Thread(target=MtrFunct)
 Mtr_thread.start()
 
-while True:
+while pause():
     if button.is_pressed:
         print("bye bye")
-        quit()
+        break()
 
