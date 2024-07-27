@@ -40,7 +40,6 @@ def MtrFunct():
         if x < (len(seq)-1): x += 1 
         else: x = 0
     print("Bye")
-    sys.exit()
 
 btn = Button(12) #formally 25
 button = Button(25)
