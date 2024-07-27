@@ -73,7 +73,7 @@ print("Rotate the encoder to see the changes in steps.")
 print("Press the button to see the button press message.")
 
 # Attach the callbacks to the rotary encoder and button
-encoder.when_rotated = rotary_callback
+# encoder.when_rotated = rotary_callback
 button.when_pressed = button_callback
 
 # Keep the program running to detect events
