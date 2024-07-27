@@ -50,5 +50,5 @@ Mtr_thread.start()
 
 while True:
     if button.is_pressed:
-        break
+        quit()
 
