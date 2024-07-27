@@ -36,11 +36,18 @@ def MtrFunct():
            (1.0,0.0),(0.5,n),(0.1,n),(-1.0,n))
     while True:
         if stgenum == 0:
+            seq = ((0.0,1.0),(n,0.5),(n,0.1),(n,-1.0),(1.0,0.0),(0.5,n),(0.1,n),(-1.0,n))
             mtr(seq[x][0],seq[x][1])
             time.sleep(0.5)
             if x < (len(seq)-1): x += 1 
             else: x = 0
         elif stgenum == 1:
+            seq = ((1.0,1.0),(0.0,0.0),(-1.0,-1.0),(0.0,0.0))
+            mtr(seq[x][0],seq[x][1])
+            time.sleep(0.5)
+            if x < (len(seq)-1): x += 1 
+            else: x = 0                
+        elif stgenum == 2:
             print("Bye")
             break
             
