@@ -43,9 +43,15 @@ def MtrFunct():
     sys.exit()
 
 btn = Button(12) #formally 25
+button = Button(25)
 btn.when_pressed = pressed
 
 Mtr_thread = threading.Thread(target=MtrFunct)
 Mtr_thread.start()
 
-pause()
+while True:
+    if button.is_pressed:
+        exit()
+    else:
+        pause()
+
