@@ -50,5 +50,6 @@ Mtr_thread.start()
 
 while True:
     if button.is_pressed:
+        print("bye bye")
         quit()
 
