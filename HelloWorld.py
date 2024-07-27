@@ -10,8 +10,7 @@ import time
 motorR = Motor(22, 23)
 motorL = Motor(27, 24)
 
-stgenum = 0
-n = None
+stgenum, x, n = 0, 0, None
 
 print("Hello")
 
@@ -36,8 +35,7 @@ def mtrseq(seq):
         else: x = 0
             
 def MtrFunct():
-    global n, stgenum
-    x = 0
+    global n, stgenum, x
     while True:
         if stgenum == 0:
             inptseq = ((0.0,1.0),(n,0.5),(n,0.1),(n,-1.0),(1.0,0.0),(0.5,n),(0.1,n),(-1.0,n))
