@@ -44,6 +44,8 @@ def MtrFunct():
 
 btn = Button(12) #formally 25
 btn.when_pressed = pressed
+btn2 = Button(25) #formally 25
+btn2.when_pressed = pressed
 
 Mtr_thread = threading.Thread(target=MtrFunct)
 Mtr_thread.start()
