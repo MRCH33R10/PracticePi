@@ -35,6 +35,8 @@ def MtrFunct():
     seq = ((0.0,1.0),(n,0.5),(n,0.1),(n,-1.0),
            (1.0,0.0),(0.5,n),(0.1,n),(-1.0,n))
     while stgenum:
+        btn1 = Button(25) #formally 25
+        btn1.when_pressed = print("Hello")
         mtr(seq[x][0],seq[x][1])
         time.sleep(0.5)
         if x < (len(seq)-1): x += 1 
@@ -44,10 +46,7 @@ def MtrFunct():
 
 btn = Button(12) #formally 25
 btn.when_pressed = pressed
-btn2 = Button(25) #formally 25
-btn2.when_pressed = pressed
+
 
 Mtr_thread = threading.Thread(target=MtrFunct)
 Mtr_thread.start()
-
-pause()
