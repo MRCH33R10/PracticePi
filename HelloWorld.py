@@ -41,6 +41,7 @@ def MtrFunct():
         else: x = 0
     print("Bye")
     quit()
+    Mtr_thread.join()
 
 btn = Button(12) #formally 25
 btn.when_pressed = pressed
