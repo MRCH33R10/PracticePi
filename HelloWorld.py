@@ -51,5 +51,5 @@ Mtr_thread.start()
 while pause():
     if button.is_pressed:
         print("bye bye")
-        break()
+        break
 
