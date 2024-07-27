@@ -24,6 +24,11 @@ def action_button_2():
     print("Button 2 pressed")
     # Add your custom logic here
 
+def button_thread(button, action):
+    button.when_pressed = action
+    button.wait_for_press()
+    button.wait_for_release()
+    
 stgenum = True
 n = None
 
@@ -61,11 +66,9 @@ btn.when_pressed = pressed
 
 threads = [
     threading.Thread(target=button_thread, args=(buttons[0], action_button_1)),
-    threading.Thread(target=button_thread, args=(buttons[1], action_button_2))
+    threading.Thread(target=button_thread, args=(buttons[1], action_button_2)),
+    threading.Thread(target=MtrFunct)
 ]
 
 for thread in threads:
     thread.start()
-
-Mtr_thread = threading.Thread(target=MtrFunct)
-Mtr_thread.start()
