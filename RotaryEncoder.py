@@ -44,5 +44,3 @@ print("Rotate the encoder to see the changes in steps.")
 # Attach the callback to the rotary encoder
 encoder.when_rotated = rotary_callback
 
-# Keep the program running to listen for encoder changes
-pause()
