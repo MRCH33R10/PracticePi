@@ -40,7 +40,7 @@ def MtrFunct():
         if x < (len(seq)-1): x += 1 
         else: x = 0
     print("Bye")
-    exit()
+    quit()
 
 btn = Button(12) #formally 25
 btn.when_pressed = pressed
