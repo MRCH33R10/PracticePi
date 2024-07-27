@@ -47,6 +47,9 @@ btn.when_pressed = pressed
 
 Mtr_thread = threading.Thread(target=MtrFunct)
 Mtr_thread.start()
+
+pause()
+
 if button.is_pressed:
     Mtr_thread.join()
 
