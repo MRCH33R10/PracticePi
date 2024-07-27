@@ -16,7 +16,10 @@ print("Hello")
 
 def pressed():
     global stgenum
+    global x
+    
     stgenum += 1
+    x = 0
     
 def mtr(spdl,spdr): 
     if isinstance(spdr, float):
