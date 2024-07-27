@@ -10,6 +10,20 @@ import time
 motorR = Motor(22, 23)
 motorL = Motor(27, 24)
 
+button_pins = [12, 25]  # Replace with your actual GPIO pin numbers
+
+# Initialize buttons
+buttons = [Button(pin) for pin in button_pins]
+
+# Define actions for button presses
+def action_button_1():
+    print("Button 1 pressed")
+    # Add your custom logic here
+
+def action_button_2():
+    print("Button 2 pressed")
+    # Add your custom logic here
+
 stgenum = True
 n = None
 
@@ -35,12 +49,6 @@ def MtrFunct():
     seq = ((0.0,1.0),(n,0.5),(n,0.1),(n,-1.0),
            (1.0,0.0),(0.5,n),(0.1,n),(-1.0,n))
     while stgenum:
-        btn1 = Button(25)  # Initialize button outside the loop
-    
-        def on_btn1_pressed():
-            print("Button 1 pressed")
-    
-        btn1.when_pressed = on_btn1_pressed
         mtr(seq[x][0],seq[x][1])
         time.sleep(0.5)
         if x < (len(seq)-1): x += 1 
@@ -51,6 +59,13 @@ def MtrFunct():
 btn = Button(12) #formally 25
 btn.when_pressed = pressed
 
+threads = [
+    threading.Thread(target=button_thread, args=(buttons[0], action_button_1)),
+    threading.Thread(target=button_thread, args=(buttons[1], action_button_2))
+]
+
+for thread in threads:
+    thread.start()
 
 Mtr_thread = threading.Thread(target=MtrFunct)
 Mtr_thread.start()
