@@ -29,10 +29,10 @@ def mtr(spdl,spdr):
         elif spdl < 0: motorL.backward(abs(spdl))  
         else:          motorL.stop()
             
-def mtrseq(seq):
+def mtrseq(seq, disp):
         global x
         mtr(seq[x][0],seq[x][1])
-        time.sleep(0.5)
+        time.sleep(disp)
         if x < (len(seq)-1): x += 1 
         else: x = 0
             
@@ -47,10 +47,10 @@ def MtrFunct():
     while True:
         if stgenum == 0:
             inptseq = ((0.0,1.0),(n,0.5),(n,0.1),(n,-1.0),(1.0,0.0),(0.5,n),(0.1,n),(-1.0,n))
-            mtrseq(inptseq)
+            mtrseq(inptseq, 0.5)
         elif stgenum == 1:
             inptseq = ((1.0,1.0),(0.0,0.0),(-1.0,-1.0),(0.0,0.0))
-            mtrseq(inptseq)              
+            mtrseq(inptseq, (encoder.steps/2.0))              
         elif stgenum == 2:
             print("Bye")
             break
