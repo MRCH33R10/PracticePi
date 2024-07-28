@@ -51,7 +51,7 @@ def MtrFunct():
         elif stgenum == 1:
             inptseq = ((1.0,1.0),(0.0,0.0),(-1.0,-1.0),(0.0,0.0))
             mtrseq(inptseq, (encoder.steps/4.0))              
-        elif stgenum == 2:
+        else:
             print("Bye")
             break
             
