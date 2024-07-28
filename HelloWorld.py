@@ -7,17 +7,15 @@ import time
 # Right:(Forward,Backward).(GPIO22,GPIO23)
 # Left :(Forward,Backward).(GPIO27,GPIO24)
 
-motorR = Motor(22, 23)
-motorL = Motor(27, 24)
-
-stgenum, x, n = 0, 0, None
+motorR, motorL = Motor(22, 23), Motor(27, 24)
+stgenum, x, n, i = 0, 0, None, 1
+btn = Button(12) #formally 25
+encoder, MIN_VALUE, MAX_VALUE = RotaryEncoder(a=6, b=5, max_steps=0), 1, 3
 
 print("Hello")
 
 def pressed():
-    global stgenum
-    global x
-    
+    global stgenum, x
     stgenum += 1
     x = 0
     
@@ -38,6 +36,12 @@ def mtrseq(seq):
         if x < (len(seq)-1): x += 1 
         else: x = 0
             
+def rotary_callback():
+    if encoder.steps < MIN_VALUE:
+        encoder.steps = MIN_VALUE
+    elif encoder.steps > MAX_VALUE:
+        encoder.steps = MAX_VALUE
+    
 def MtrFunct():
     global n, stgenum
     while True:
@@ -52,9 +56,8 @@ def MtrFunct():
             break
             
 
-btn = Button(12) #formally 25
-button = Button(25)
 btn.when_pressed = pressed
+encoder.when_rotated = rotary_callback
 
 Mtr_thread = threading.Thread(target=MtrFunct)
 Mtr_thread.start()
