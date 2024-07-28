@@ -9,7 +9,7 @@ import time
 
 motorR, motorL = Motor(22, 23), Motor(27, 24)
 stgenum, x, n, i = 0, 0, None, 1
-btn = Button(12) #formally 25
+btn = Button(12, hold_time = 1) #formally 25
 encoder, MIN_VALUE, MAX_VALUE = RotaryEncoder(a=6, b=5, max_steps=0), 1, 8
 
 print("Hello")
