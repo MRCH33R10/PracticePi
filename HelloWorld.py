@@ -1,4 +1,4 @@
-from gpiozero import Button, Motor
+from gpiozero import Button, Motor, RotaryEncoder
 from signal import pause
 import threading
 import sys
