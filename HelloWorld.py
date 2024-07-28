@@ -15,8 +15,10 @@ encoder.steps = MIN_VALUE
 
 print("Hello")
 
+
 def pressed():
     global stgenum, x
+    mtr(0.0,0.0)
     stgenum += 1
     x = 0
     
