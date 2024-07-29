@@ -1,6 +1,6 @@
 from gpiozero import Button, Motor, RotaryEncoder
 from signal import pause
-from time import strftime, time
+from time import strftime, sleep
 import threading
 import sys
 
