@@ -1,20 +1,25 @@
 from gpiozero import Button, Motor, RotaryEncoder
 from signal import pause
 import threading
+from datetime import datetime
+import pytz
 import sys
 import time
 
 # Right:(Forward,Backward).(GPIO22,GPIO23)
 # Left :(Forward,Backward).(GPIO27,GPIO24)
 
+newYorkTz = pytz.timezone("America/New_York") 
+timeInNewYork = datetime.now(newYorkTz)
+currentTimeInNewYork = timeInNewYork.strftime("%H:%M:%S")
+
+print("The current time is:", currentTimeInNewYork)
+
 motorR, motorL = Motor(22, 23), Motor(27, 24)
 stgenum, x, n, i = 0, 0, None, 1
 btn = Button(12, hold_time = 3, bounce_time = 0.2) #formally 25
 encoder, MIN_VALUE, MAX_VALUE = RotaryEncoder(a=6, b=5, max_steps=0), 1, 8
 encoder.steps = MIN_VALUE
-
-print("Hello")
-
 
 def pressed():
     global stgenum, x
