@@ -10,7 +10,7 @@ from time import strftime
 # Right:(Forward,Backward).(GPIO22,GPIO23)
 # Left :(Forward,Backward).(GPIO27,GPIO24)
 
-print("Hello, its" strftime("%d/%m/%y at %I:%M%p")
+print("Hello, its" strftime("%d/%m/%y at %I:%M%p"))
 
 
 motorR, motorL = Motor(22, 23), Motor(27, 24)
