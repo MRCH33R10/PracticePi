@@ -10,7 +10,7 @@ from time import strftime
 # Right:(Forward,Backward).(GPIO22,GPIO23)
 # Left :(Forward,Backward).(GPIO27,GPIO24)
 
-print("Logging on: ", strftime("%d/%m/%y at %I:%M%p"))
+print("Logging on:     ", strftime("%d/%m/%y at %I:%M%p"))
 
 
 motorR, motorL = Motor(22, 23), Motor(27, 24)
@@ -58,7 +58,7 @@ def MtrFunct():
             inptseq = ((1.0,1.0),(0.0,0.0),(-1.0,-1.0),(0.0,0.0))
             mtrseq(inptseq, (encoder.steps/4.0))              
         else:
-            print("Logging off:", strftime("%d/%m/%y at %I:%M%p"))
+            print("Logging off:    ", strftime("%d/%m/%y at %I:%M%p"))
             break
             
 
