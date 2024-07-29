@@ -2,7 +2,6 @@ from gpiozero import Button, Motor, RotaryEncoder
 from signal import pause
 import threading
 import sys
-from time import strftime
 import time
 
 # Right:(Forward,Backward).(GPIO22,GPIO23)
