@@ -58,7 +58,7 @@ def MtrFunct():
             inptseq = ((1.0,1.0),(0.0,0.0),(-1.0,-1.0),(0.0,0.0))
             mtrseq(inptseq, (encoder.steps/4.0))              
         else:
-            print("Logging off")
+            print("Logging off:", strftime("%d/%m/%y at %I:%M%p"))
             break
             
 
