@@ -8,10 +8,19 @@
 
 # if __name__ == "__main__":
 #     app.run(debug=True)
-import requests
+# import requests
 
-# Replace '192.168.1.10' with the actual IP address of your Raspberry Pi Zero 2 W
-raspberry_pi_ip = '192.168.0.125' 
-r = requests.get(f'http://127.0.0.1:5000')
-print(r.status_code)
-print(r.text)
+# # Replace '192.168.1.10' with the actual IP address of your Raspberry Pi Zero 2 W
+# raspberry_pi_ip = '192.168.0.125' 
+# r = requests.get(f'http://127.0.0.1:5000')
+# print(r.status_code)
+# print(r.text)
+import requests
+import json
+
+url = 'http://<PC_IP_ADDRESS>:5000/data'
+data = {'key': 'value'}
+
+response = requests.post(url, json=data)
+print(f"Response from server: {response.json()}")
+
