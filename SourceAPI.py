@@ -8,8 +8,7 @@
 
 # if __name__ == "__main__":
 #     app.run(debug=True)
-import requests
-r = requests.get('http://127.0.0.1:5000/')
-# print(r.status_code)
+raspberry_pi_ip = '192.168.1.10' 
+r = requests.get(f'http://{raspberry_pi_ip}:5000/')
+print(r.status_code)
 print(r.text)
-# print(r.text[0:1000])
