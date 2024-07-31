@@ -15,12 +15,28 @@
 # r = requests.get(f'http://127.0.0.1:5000')
 # print(r.status_code)
 # print(r.text)
+# import requests
+# import json
+
+# url = 'http://192.168.0.162:5000/data'
+# data = {'key': 'value'}
+
+# response = requests.post(url, json=data)
+# print(f"Response from server: {response.json()}")
 import requests
 import json
 
-url = 'http://192.168.0.162:5000/data'
+url = 'http://<PC_IP_ADDRESS>:5000/data'
 data = {'key': 'value'}
 
-response = requests.post(url, json=data)
-print(f"Response from server: {response.json()}")
-
+try:
+    response = requests.post(url, json=data)
+    response.raise_for_status()  # Raise an exception for HTTP errors
+    try:
+        json_response = response.json()
+        print(f"Response from server: {json_response}")
+    except json.JSONDecodeError:
+        print("Failed to parse JSON response:")
+        print(response.text)
+except requests.RequestException as e:
+    print(f"Request failed: {e}")
