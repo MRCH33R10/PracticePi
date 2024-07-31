@@ -18,7 +18,7 @@
 import requests
 import json
 
-url = 'http://<PC_IP_ADDRESS>:5000/data'
+url = 'http://192.168.0.162:5000/data'
 data = {'key': 'value'}
 
 response = requests.post(url, json=data)
