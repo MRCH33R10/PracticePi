@@ -3,7 +3,7 @@ import socketserver
 import os
 
 PORT = 8000  # You can choose any port you prefer
-DIRECTORY = "/Users/nicholasthompson/Desktop"  # Replace with the directory containing your MP4 file
+DIRECTORY = "/home/NicholasThompson/PracticePi/NetworkInt/SouthPark"  # Replace with the directory containing your MP4 file
 
 class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
