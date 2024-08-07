@@ -4,7 +4,7 @@ import csv
 # https://archive.org/download/northplayground/
 
 indx = 0
-filename = input("file path: /Users/nicholasthompson/Desktop/Extracurricular/Southpark1-20 - Sheet1.csv")
+filename = input("file path:")
 lower = int(input("What is the lower bounds of the season?: "))
 upper = int(input("What is the upper bounds of the season?: "))
 
