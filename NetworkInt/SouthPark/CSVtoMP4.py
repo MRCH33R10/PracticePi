@@ -16,5 +16,5 @@ with open(filename, 'r') as csvfile:
             if (indx>=lower)&(indx<=upper): input("press any key to continue...")
         elif (indx>=lower)&(indx<=upper):
             urllib.request.urlretrieve(row[1], row[0])
-        print(row[0])
+            print(row[0])
     print("Download Complete")
